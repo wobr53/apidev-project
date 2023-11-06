@@ -82,3 +82,20 @@ def get_progress_by_player_and_game(db: Session, player_id: int, game_id: int):
     return db.query(models.Progress).filter(models.Progress.player_id == player_id,
                                             models.Progress.game_id == game_id
                                             ).first
+
+
+# Delete progress based on the player_id and game_id
+def delete_progress(db: Session, player_id: int, game_id: int):
+    progress_to_delete = get_progress_by_player_and_game(db, player_id, game_id)
+    db.delete(progress_to_delete)
+    db.commit()
+
+
+# CRUD Extra
+
+# Delete everything
+def delete_all(db: Session):
+    db.query(models.Player).delete()
+    db.query(models.Game).delete()
+    db.query(models.Progress)
+    db.commit()

@@ -29,8 +29,8 @@ def get_db_session():
 # GET /players/?skip=&limit=
 @app.get("/players", response_model=list[schemas.Player])
 def read_players(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):  # async weg
-    users = crud.get_players(db=db, skip=skip, limit=limit)
-    return users
+    players = crud.get_players(db=db, skip=skip, limit=limit)
+    return players
 
 
 # POST /players
@@ -91,3 +91,28 @@ def create_progress(progress: schemas.ProgressCreate, db: Session = Depends(get_
         raise HTTPException(status_code=400, detail="Progress entry already exists")
 
     return crud.create_progress(db, progress=progress)
+
+
+# DELETE /progress/?player=&game=
+@app.delete("/progress/", response_model=schemas.Progress)
+def delete_progress(player: int = -1, game: int = -1, db: Session = Depends(get_db_session)):
+    db_player = crud.get_player(db, player_id=player)
+    if db_player is None:
+        raise HTTPException(status_code=404, detail="Player not found")
+
+    db_game = crud.get_game(db, game_id=game)
+    if db_game is None:
+        raise HTTPException(status_code=404, detail="Game not found")
+
+    db_progress = crud.get_progress_by_player_and_game(db, player, game)
+    if db_progress is None:
+        raise HTTPException(status_code=404, detail="Progress entry not found")
+
+    return crud.delete_progress(db, player, game)
+
+
+# DELETE /restart
+@app.delete("/reset/")
+def delete_all(db: Session = Depends(get_db_session)):
+    crud.delete_all(db)
+    return {"message": "Reset successful, all data has been wiped."}
