@@ -36,9 +36,12 @@ def read_players(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_s
 # POST /players
 @app.post("/players", response_model=schemas.Player)
 def create_player(player: schemas.PlayerCreate, db: Session = Depends(get_db_session)):
-    db_player = crud.get_player_by_email(db, email=player.email)
-    if db_player:
+    db_player_email = crud.get_player_by_email(db, email=player.email)
+    if db_player_email:
         raise HTTPException(status_code=400, detail="Email already registered")
+    db_player_username = crud.get_player_by_username(db, username=player.username)
+    if db_player_username:
+        raise HTTPException(status_code=400, detail="Username already registered")
     return crud.create_player(db, player=player)
 
 
@@ -59,10 +62,10 @@ def read_games(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_ses
 
 
 # POST /games
-@app.get("/games", response_model=schemas.Game)
+@app.post("/games", response_model=schemas.Game)
 def create_game(game: schemas.GameCreate, db: Session = Depends(get_db_session)):
     db_game_title = crud.get_game_by_title(db, title=game.title)
-    if db_game_title:
+    if db_game_title is not None:
         if db_game_title.release_date == game.release_date:
             raise HTTPException(status_code=400, detail="Game already registered")
     return crud.create_game(db, game)
@@ -94,7 +97,7 @@ def create_progress(progress: schemas.ProgressCreate, db: Session = Depends(get_
 
 
 # DELETE /progress/?player=&game=
-@app.delete("/progress/", response_model=schemas.Progress)
+@app.delete("/progress/")
 def delete_progress(player: int = -1, game: int = -1, db: Session = Depends(get_db_session)):
     db_player = crud.get_player(db, player_id=player)
     if db_player is None:
@@ -108,11 +111,12 @@ def delete_progress(player: int = -1, game: int = -1, db: Session = Depends(get_
     if db_progress is None:
         raise HTTPException(status_code=404, detail="Progress entry not found")
 
-    return crud.delete_progress(db, player, game)
+    crud.delete_progress(db, player, game)
+    return {"detail": "Progress of player " + str(player) + " in game " + str(game) + " has been deleted."}
 
 
 # DELETE /restart
 @app.delete("/reset/")
 def delete_all(db: Session = Depends(get_db_session)):
     crud.delete_all(db)
-    return {"message": "Reset successful, all data has been wiped."}
+    return {"detail": "Reset successful, all data has been wiped."}

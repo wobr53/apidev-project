@@ -28,7 +28,7 @@ class ProgressCreate(ProgressBase):
 class PlayerBase(BaseModel):
     username: str
     email: str
-    date_of_birth: date | None = None
+    date_of_birth: date
     country: str | None = None
 
 
@@ -49,7 +49,7 @@ class PlayerCreate(PlayerBase):
 # Base class for all games
 class GameBase(BaseModel):
     title: str
-    release_date: str
+    release_date: date
     genre: str | None = None
     developer: str | None = None
 

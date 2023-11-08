@@ -7,17 +7,17 @@ import schemas
 
 # Search a player by id
 def get_player(db: Session, player_id: int):
-    return db.query(models.Player).filter(models.Player.id == player_id).first
+    return db.query(models.Player).filter(models.Player.player_id == player_id).first()
 
 
 # Search a player by email
 def get_player_by_email(db: Session, email: str):
-    return db.query(models.Player).filter(models.Player.email == email).first
+    return db.query(models.Player).filter(models.Player.email == email).first()
 
 
 # Search a player by username
 def get_player_by_username(db: Session, username: str):
-    return db.query(models.Player).filter(models.Player.username == username).first
+    return db.query(models.Player).filter(models.Player.username == username).first()
 
 
 # Retrieve all players
@@ -28,7 +28,11 @@ def get_players(db: Session, skip: int = 0, limit: int = 100):
 # Create a new player; password, username and email required, id will auto-generate
 def create_player(db: Session, player: schemas.PlayerCreate):
     fake_hashed_password = player.password + "placeholder"
-    db_player = models.Player(username=player.username, email=player.email, password_hash=fake_hashed_password)
+    db_player = models.Player(username=player.username,
+                              email=player.email,
+                              date_of_birth=player.date_of_birth,
+                              country=player.country,
+                              password_hash=fake_hashed_password)
     db.add(db_player)
     db.commit()
     db.refresh(db_player)
@@ -39,12 +43,12 @@ def create_player(db: Session, player: schemas.PlayerCreate):
 
 # Search a game by id
 def get_game(db: Session, game_id: int):
-    return db.query(models.Game).filter(models.Game.id == game_id).first
+    return db.query(models.Game).filter(models.Game.game_id == game_id).first()
 
 
 # Search a game by title
 def get_game_by_title(db: Session, title: str):
-    return db.query(models.Game).filter(models.Game.title == title).first
+    return db.query(models.Game).filter(models.Game.title == title).first()
 
 
 # Retrieve all games
@@ -52,9 +56,12 @@ def get_games(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Game).offset(skip).limit(limit).all()
 
 
-# Create a new Game, title is required, id will auto-generate
+# Create a new Game, title and release date are required, id will auto-generate
 def create_game(db: Session, game: schemas.GameCreate):
-    db_game = models.Game(title=game.title)
+    db_game = models.Game(title=game.title,
+                          release_date=game.release_date,
+                          genre=game.genre,
+                          developer=game.developer)
     db.add(db_game)
     db.commit()
     db.refresh(db_game)
@@ -81,7 +88,7 @@ def create_progress(db: Session, progress: schemas.ProgressCreate):
 def get_progress_by_player_and_game(db: Session, player_id: int, game_id: int):
     return db.query(models.Progress).filter(models.Progress.player_id == player_id,
                                             models.Progress.game_id == game_id
-                                            ).first
+                                            ).first()
 
 
 # Delete progress based on the player_id and game_id
@@ -89,6 +96,7 @@ def delete_progress(db: Session, player_id: int, game_id: int):
     progress_to_delete = get_progress_by_player_and_game(db, player_id, game_id)
     db.delete(progress_to_delete)
     db.commit()
+    return progress_to_delete
 
 
 # CRUD Extra
@@ -97,5 +105,5 @@ def delete_progress(db: Session, player_id: int, game_id: int):
 def delete_all(db: Session):
     db.query(models.Player).delete()
     db.query(models.Game).delete()
-    db.query(models.Progress)
+    db.query(models.Progress).delete()
     db.commit()
