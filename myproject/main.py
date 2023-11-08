@@ -96,6 +96,24 @@ def create_progress(progress: schemas.ProgressCreate, db: Session = Depends(get_
     return crud.create_progress(db, progress=progress)
 
 
+# PUT /progress
+# @app.put("/progress", response_model=schemas.Progress)
+# def update_progress(progress: schemas.ProgressCreate, db: Session = Depends(get_db_session)):
+#     db_player = crud.get_player(db, player_id=progress.player_id)
+#     if db_player is None:
+#         raise HTTPException(status_code=404, detail="Player not found")
+#
+#     db_game = crud.get_game(db, game_id=progress.game_id)
+#     if db_game is None:
+#         raise HTTPException(status_code=404, detail="Game not found")
+#
+#     # existing_progress = crud.get_progress_by_player_and_game(db, progress.player_id, progress.game_id)
+#     # if existing_progress:
+#     #     raise HTTPException(status_code=400, detail="Progress entry already exists")
+#
+#     return crud.create_progress(db, progress=progress)
+
+
 # DELETE /progress/?player=&game=
 @app.delete("/progress/")
 def delete_progress(player: int = -1, game: int = -1, db: Session = Depends(get_db_session)):
