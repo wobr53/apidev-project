@@ -126,7 +126,7 @@ def create_progress(progress: schemas.ProgressCreate, db: Session = Depends(get_
 
 
 # DELETE /progress/?player=&game=
-@app.delete("/progress/")
+@app.delete("/progress")
 def delete_progress(player: int = -1, game: int = -1, db: Session = Depends(get_db_session)):
     db_player = crud.get_player(db, player_id=player)
     if db_player is None:
@@ -145,7 +145,7 @@ def delete_progress(player: int = -1, game: int = -1, db: Session = Depends(get_
 
 
 # DELETE /restart
-@app.delete("/reset/")
+@app.delete("/reset")
 def delete_all(db: Session = Depends(get_db_session)):
     crud.delete_all(db)
     return {"detail": "Reset successful, all data has been wiped."}
