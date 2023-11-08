@@ -1,12 +1,13 @@
-# nog aanpassen
-
 import os
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
+from database import engine, SessionLocal
+
 import crud
 import models
 import schemas
-from database import engine, SessionLocal
+import auth
 
 if not os.path.exists('sqlitedb'):
     os.makedirs('sqlitedb')
@@ -14,6 +15,8 @@ if not os.path.exists('sqlitedb'):
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 # Dependency
@@ -28,7 +31,9 @@ def get_db_session():
 
 # GET /players/?skip=&limit=
 @app.get("/players", response_model=list[schemas.Player])
-def read_players(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):  # async weg
+def read_players(skip: int = 0, limit: int = 100,
+                 db: Session = Depends(get_db_session),
+                 token: str = Depends(oauth2_scheme)):
     players = crud.get_players(db=db, skip=skip, limit=limit)
     return players
 
@@ -47,7 +52,9 @@ def create_player(player: schemas.PlayerCreate, db: Session = Depends(get_db_ses
 
 # GET /player/{username}
 @app.get("/players/{username}", response_model=schemas.Player)
-def read_player(username: str, db: Session = Depends(get_db_session)):
+def read_player(username: str,
+                db: Session = Depends(get_db_session),
+                token: str = Depends(oauth2_scheme)):
     db_player = crud.get_player_by_username(db, username=username)
     if db_player is None:
         raise HTTPException(status_code=404, detail="Username not found")
@@ -56,7 +63,9 @@ def read_player(username: str, db: Session = Depends(get_db_session)):
 
 # GET /games/?skip=&limit=
 @app.get("/games", response_model=list[schemas.Game])
-def read_games(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):
+def read_games(skip: int = 0, limit: int = 100,
+               db: Session = Depends(get_db_session),
+               token: str = Depends(oauth2_scheme)):
     games = crud.get_games(db, skip=skip, limit=limit)
     return games
 
@@ -73,7 +82,9 @@ def create_game(game: schemas.GameCreate, db: Session = Depends(get_db_session))
 
 # GET /progress/?skip=&limit=
 @app.get("/progress", response_model=list[schemas.Progress])
-def read_progress(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):
+def read_progress(skip: int = 0, limit: int = 100,
+                  db: Session = Depends(get_db_session),
+                  token: str = Depends(oauth2_scheme)):
     progress = crud.get_progress(db, skip=skip, limit=limit)
     return progress
 
@@ -138,3 +149,22 @@ def delete_progress(player: int = -1, game: int = -1, db: Session = Depends(get_
 def delete_all(db: Session = Depends(get_db_session)):
     crud.delete_all(db)
     return {"detail": "Reset successful, all data has been wiped."}
+
+
+# POST /token
+@app.post("/token")
+def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db_session)):
+    # Try to authenticate the player
+    player = auth.authenticate_player(db, form_data.username, form_data.password)
+    if not player:
+        raise HTTPException(
+            status_code=401,
+            detail="Incorrect username or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    # Add the JWT case sub with the subject(player)
+    access_token = auth.create_access_token(
+        data={"sub": player.email}
+    )
+    # Return the JWT as a bearer token to be placed in the headers
+    return {"access_token": access_token, "token_type": "bearer"}

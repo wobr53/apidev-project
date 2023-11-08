@@ -1,4 +1,6 @@
 from sqlalchemy.orm import Session
+
+import auth
 import models
 import schemas
 
@@ -27,12 +29,12 @@ def get_players(db: Session, skip: int = 0, limit: int = 100):
 
 # Create a new player; password, username and email required, id will auto-generate
 def create_player(db: Session, player: schemas.PlayerCreate):
-    fake_hashed_password = player.password + "placeholder"
+    hashed_password = auth.get_password_hash(player.password)
     db_player = models.Player(username=player.username,
                               email=player.email,
                               date_of_birth=player.date_of_birth,
                               country=player.country,
-                              password_hash=fake_hashed_password)
+                              password_hash=hashed_password)
     db.add(db_player)
     db.commit()
     db.refresh(db_player)
