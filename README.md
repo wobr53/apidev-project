@@ -46,13 +46,13 @@ Bij games geldt er ook een restrictie op duplicaten: spelen met de dezelfde tite
 ![Aanmaken van spel met bestaande titel op een niet overeenkomende publicatiedatum.](https://github.com/wobr53/apidev-project/assets/113974538/886a733f-9295-4e19-acd9-1faa34b743aa)
 
 ### POST /progress
-Als laatste kan je ook progress toevoegen aan de databank. Deze moet echter altijd gekoppeld zijn aan een bestaande speler en game, anders zal de endpoint aangeven welke van de twee niet inorde is.
+Als laatste kan je ook progressie toevoegen aan de databank. Deze moet echter altijd gekoppeld zijn aan een bestaande speler en game, anders zal de endpoint aangeven welke van de twee niet inorde is.
 
-![Aanmaken van progress met een ongeldige player_id.](https://github.com/wobr53/apidev-project/assets/113974538/8051b3f4-719a-44ea-a137-c95c0f0fc86a)
+![Aanmaken van progressie met een ongeldige player_id.](https://github.com/wobr53/apidev-project/assets/113974538/8051b3f4-719a-44ea-a137-c95c0f0fc86a)
 
-![Aanmaken van progress met een ongeldige game_id.](https://github.com/wobr53/apidev-project/assets/113974538/5016afdd-e7e8-4873-af7e-1c460acf884f)
+![Aanmaken van progressie met een ongeldige game_id.](https://github.com/wobr53/apidev-project/assets/113974538/5016afdd-e7e8-4873-af7e-1c460acf884f)
 
-![Aanmaken van progress voor speler 1 in spel 1. Andere parameters zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/82015ee0-0047-4ef8-994f-7cdfabea6631)
+![Aanmaken van progressie voor speler 1 in spel 1. Andere parameters zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/82015ee0-0047-4ef8-994f-7cdfabea6631)
 
 ### POST /token
 Zoals je kan zien in de eerste printscreen is er een authenticatiefunctie. Deze zorgt ervoor dat sommige acties in de interface enkel mogelijk zijn als je geauthenticeerd bent tegenover de API.
@@ -64,5 +64,36 @@ In de printscreen kan je zien dat speler 1 nu een sessietoken heeft gekregen. Hi
 >[!NOTE]
 > Voor demonstratie-doeleinden heb ik 'off screen' een paar extra spelers, spelen, en progress-vermeldingen toegevoegd aan de databank.
 
+>[!IMPORTANT]
+>Na het vergaren van de accesstoken moet je hem meegeven in het authorisation veld van het request.
+>![Access token in authorization veld.](https://github.com/wobr53/apidev-project/assets/113974538/30d9e319-9130-402f-98fc-a498efc22b54)
 
+### GET /players
+Met dit get request vragen we alle spelers met overeenkomstige progress uit de databank op. Indien er geen spelers in de databank zitten, krijg je een lege lijst terug.
+
+![Alle spelers 1/4](https://github.com/wobr53/apidev-project/assets/113974538/ad118f57-9327-4212-a26d-4eadfe1b852d)
+![Alle spelers 2/4](https://github.com/wobr53/apidev-project/assets/113974538/eba865ce-6241-443f-a232-372d65bdb762)
+![Alle spelers 3/4](https://github.com/wobr53/apidev-project/assets/113974538/f0641aa7-8f80-44a7-9b74-709f526b7f95)
+![Alle spelers 4/4](https://github.com/wobr53/apidev-project/assets/113974538/69d430ef-8822-493e-9cfa-9bc2e003d925)
+
+### GET /games
+Dit is hetzelfde als voor de spelers maar dan voor spelletjes.
+
+![Alle spelen 1/4](https://github.com/wobr53/apidev-project/assets/113974538/d09173d8-3ef3-4b59-be9a-643d5ce69be0)
+![Alle spelen 2/4](https://github.com/wobr53/apidev-project/assets/113974538/7f472eae-528a-473d-bfe9-a1a22328f618)
+![Alle spelen 3/4](https://github.com/wobr53/apidev-project/assets/113974538/1db1a3e6-2804-44e8-bcc6-05e8e57bcada)
+![Alle spelen 4/4](https://github.com/wobr53/apidev-project/assets/113974538/8dd77244-14b7-4690-a8ec-9f13ee8b66d9)
+
+### GET /progress
+Met dit request vragen we elke progressie-vermelding afzonderlijk op. Ook hier zal je een lege lijst krijgen als er geen progressie-vermeldingen zijn.
+
+![Alle progressie 1/3](https://github.com/wobr53/apidev-project/assets/113974538/501a2703-8d71-409a-b430-da5ff523a38d)
+![Alle progressie 2/3](https://github.com/wobr53/apidev-project/assets/113974538/3fe2cee9-9fb8-44b1-83f4-92fc1704741a)
+![Alle prgressie 3/3](https://github.com/wobr53/apidev-project/assets/113974538/6d91a839-4327-4079-92d9-045d66be7e60)
+
+### GET players/{username}
+Dit request zal je de speler zijn/haar gegevens en statistieken laten zien op basis van de gebruikersnaam. Als de gebruikersnaam niet bestaat krijg je dit ook te weten.
+
+![Gegevens en statistieken van speler met gebruikersnaam "player3".](https://github.com/wobr53/apidev-project/assets/113974538/5cd80a5d-5194-4b85-baeb-066b015d3fca)
+![Ongeldige gebruikersnaam meegegeven.](https://github.com/wobr53/apidev-project/assets/113974538/67f26815-b9d7-4414-ad95-6808b2f2bb62)
 
