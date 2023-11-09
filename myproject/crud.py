@@ -86,6 +86,18 @@ def create_progress(db: Session, progress: schemas.ProgressCreate):
     return db_progress
 
 
+# Update a progress entity
+def update_progress(db: Session, player: int, game: int, progress: schemas.ProgressUpdate):
+    db_progress = get_progress_by_player_and_game(db, player, game)
+    if db_progress is None:
+        return None
+    for key, value in progress.dict().items():
+        setattr(db_progress, key, value)
+    db.commit()
+    db.refresh(db_progress)
+    return db_progress
+
+
 # Get progress based on the player_id and game_id
 def get_progress_by_player_and_game(db: Session, player_id: int, game_id: int):
     return db.query(models.Progress).filter(models.Progress.player_id == player_id,

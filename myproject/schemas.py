@@ -11,6 +11,13 @@ class ProgressBase(BaseModel):
     is_completed: bool
 
 
+# Schema for progress updates
+class ProgressUpdate(BaseModel):
+    high_score: float | None = None
+    playtime: int | None = None
+    is_completed: bool | None = None
+
+
 # Progress OUT
 class Progress(ProgressBase):
     progress_id: int
