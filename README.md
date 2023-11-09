@@ -97,3 +97,36 @@ Dit request zal je de speler zijn/haar gegevens en statistieken laten zien op ba
 ![Gegevens en statistieken van speler met gebruikersnaam "player3".](https://github.com/wobr53/apidev-project/assets/113974538/5cd80a5d-5194-4b85-baeb-066b015d3fca)
 ![Ongeldige gebruikersnaam meegegeven.](https://github.com/wobr53/apidev-project/assets/113974538/67f26815-b9d7-4414-ad95-6808b2f2bb62)
 
+### PUT /progress?player=&game=
+Als er progressie in de databank staat die achterhaald is, kan je deze updaten met dit request. 
+Er zijn wel drie vereisten:
++ De speler moet bestaan in de databank
++ Het spel moet bestaan in de databank
++ Er moet al een progressie-vermelding voor die/dat speler en spel in de databank bestaan
+Als aan één van deze vereisten niet voldaan is, krijg je een gepaste foutmelding terug.
+
+![Update van progressie voor onbestaande speler.](https://github.com/wobr53/apidev-project/assets/113974538/a608dc0e-94f8-4f4a-a215-08f482508147)
+![Update van progressie voor onbestaand spel.](https://github.com/wobr53/apidev-project/assets/113974538/9a0bf83f-f99b-4af0-842f-17df29793c1f)
+![Update van progressie voor onbestaande progressie.](https://github.com/wobr53/apidev-project/assets/113974538/d914332c-0dd2-4fa6-9fba-a73f5ce030ba)
+![Update van progressie voor speler 2 in spel 3.](https://github.com/wobr53/apidev-project/assets/113974538/5e00c990-6fd0-4dfb-b6db-d277c4e9d0d1)
+
+Zoals je zal zien is de progressie-vermelding voor speler 2 in spel 3 nu veranderd.
+
+![Verificatie wijziging](https://github.com/wobr53/apidev-project/assets/113974538/3e1e38c6-7719-4f96-8e12-6cb30986d8aa)
+
+
+### DELETE /progress?player=&game=
+Je kan ook specifieke progressie-vermeldingen uit de databank verwijderen.
+Hier zijn ook weer drie vereisten van toepassing:
++ De speler moet bestaan in de databank
++ Het spel moet bestaan in de databank
++ Er moet al een progressie-vermelding voor die/dat speler en spel in de databank bestaan
+
+![Delete van progressie van onbestaande speler.](https://github.com/wobr53/apidev-project/assets/113974538/635d7b7f-8c06-4517-a895-a3bd08ba5f7b)
+![Delete van progressie van onbestaand spel.](https://github.com/wobr53/apidev-project/assets/113974538/2734bbf0-2419-4a15-a1ef-08060a6e6264)
+![Delete van progressie bij onbestaande progressie.](https://github.com/wobr53/apidev-project/assets/113974538/75388f0a-09e4-4f05-bd0e-4d21b15ebdc1)
+![Delete van progressie van speler 3 in spel 3.](https://github.com/wobr53/apidev-project/assets/113974538/ae1e829e-911a-4a20-be6b-cb29c6209328)
+
+Nu zal je zien dat de progressie volledig is verwijderd uit de databank.
+
+![Verificatie verwijdering](https://github.com/wobr53/apidev-project/assets/113974538/d7b4bc51-78f2-48f4-9cf7-98b6ea198cfe)
