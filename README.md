@@ -2,6 +2,9 @@
 
 Link to API: https://project-api-service-wobr53.cloud.okteto.net/docs#/
 
+>[!IMPORTANT]
+>De database die u te zijn krijgt als u de link opent kan reeds gewijzigt zijn omwille van verder testing!
+
 ## Thema
 Als thema heb ik ervoor gekozen om mijn project te maken rond videospelletjes; meer bepaald de progressie in videospelletjes. Ik ben zelf een gamer en daarbij ook een enorme trophy/achievements - hunter, dus ik dacht dat het wel eens leuk zou zijn om dit stukje van mezelf te kunnen verwerken in een project.
 
