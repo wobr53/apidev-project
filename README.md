@@ -26,13 +26,13 @@ Na het opvragen van dit request zal alle data uit de databank verwijderd zijn. H
 ### POST /players
 Deze request zal een nieuwe speler aanmaken mits je de juiste request body meegeeft.
 
-![Aanmaken van een speler met gebruikersnaam 'player1', email 'player1@test.com', geboortedatum '12 december 2003', en wachtwoord 'pass1'. Land wordt niet meegegeven want dit is niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/59ec5f26-c91f-4a0d-ad31-d5b63283fbd3)
+![Aanmaken van een speler met gebruikersnaam 'player1', email 'player1@test.com', geboortedatum '12 december 2003', en wachtwoord 'pass1'. Land wordt niet meegegeven want dit is niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/c6b727ef-add5-4153-b276-3ea2384a9e76 "Aanmaken van een speler met gebruikersnaam 'player1', email 'player1@test.com', geboortedatum '12 december 2003', en wachtwoord 'pass1'. Land wordt niet meegegeven want dit is niet verplicht.")
 
 Het is niet mogelijk om een speler aan te maken met dezelf gebruikersnaam of email. Als dit toch gebeurt, zal het programma een foutmelding teruggeven dat specifieerd wat er mis is.
 
-<img width="966" alt="Aanmaken van een speler met een al bestaand email." src="https://github.com/wobr53/apidev-project/assets/113974538/ffd17404-a74c-4ffe-ae04-77e823fe7579">
+![Aanmaken van een speler met een al bestaand email.](https://github.com/wobr53/apidev-project/assets/113974538/c4fa03fd-805a-49ac-86d7-8d8f3f80669d "Aanmaken van een speler met een al bestaand email.")
 
-<img width="966" alt="Aanmaken van een speler met een al bestaande gebruikersnaam." src="https://github.com/wobr53/apidev-project/assets/113974538/5d68d09b-8e30-467c-87f1-ec528aee1461">
+![Aanmaken van een speler met een al bestaande gebruikersnaam.](https://github.com/wobr53/apidev-project/assets/113974538/f3d9230c-f968-4dee-a59f-7d4bb520ff04 "Aanmaken van een speler met een al bestaande gebruikersnaam.")
 
 ### POST /games
 Naast spelers kan je ook spelletjes toevoegen aan de databank. Dit kan met behulp van het post /games endpoint.
