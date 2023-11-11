@@ -105,15 +105,14 @@ Er zijn wel drie vereisten:
 + Er moet al een progressie-vermelding voor die/dat speler en spel in de databank bestaan
 Als aan één van deze vereisten niet voldaan is, krijg je een gepaste foutmelding terug.
 
-![Update van progressie voor onbestaande speler.](https://github.com/wobr53/apidev-project/assets/113974538/a608dc0e-94f8-4f4a-a215-08f482508147)
-![Update van progressie voor onbestaand spel.](https://github.com/wobr53/apidev-project/assets/113974538/9a0bf83f-f99b-4af0-842f-17df29793c1f)
-![Update van progressie voor onbestaande progressie.](https://github.com/wobr53/apidev-project/assets/113974538/d914332c-0dd2-4fa6-9fba-a73f5ce030ba)
-![Update van progressie voor speler 2 in spel 3.](https://github.com/wobr53/apidev-project/assets/113974538/5e00c990-6fd0-4dfb-b6db-d277c4e9d0d1)
+![Update van progressie voor onbestaande speler.](https://github.com/wobr53/apidev-project/assets/113974538/183dd91f-0703-496c-84bd-e77ed99a9564 "Update van progressie voor onbestaande speler.")
+![Update van progressie voor onbestaand spel.](https://github.com/wobr53/apidev-project/assets/113974538/3108396f-9120-4472-b594-21f3a5852f0e "Update van progressie voor onbestaand spel.")
+![Update van progressie voor onbestaande progressie.](https://github.com/wobr53/apidev-project/assets/113974538/fffb6e9e-8a3c-4f58-9c6b-04db9976fe41 "Update van progressie voor onbestaande progressie.")
+![Update van progressie voor speler 2 in spel 3.](https://github.com/wobr53/apidev-project/assets/113974538/a8ea7c71-816b-4629-91bc-2ceff23b560f "Update van progressie voor speler 2 in spel 3.")
 
 Zoals je zal zien is de progressie-vermelding voor speler 2 in spel 3 nu veranderd.
 
-![Verificatie wijziging](https://github.com/wobr53/apidev-project/assets/113974538/3e1e38c6-7719-4f96-8e12-6cb30986d8aa)
-
+![Verificatie wijziging.](https://github.com/wobr53/apidev-project/assets/113974538/bf01b0ab-4176-48cf-837e-2832d031f01a "Verificatie wijziging.")
 
 ### DELETE /progress?player=&game=
 Je kan ook specifieke progressie-vermeldingen uit de databank verwijderen.
