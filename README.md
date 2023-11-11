@@ -50,16 +50,16 @@ Bij games geldt er ook een restrictie op duplicaten: spelen met de dezelfde tite
 ### POST /progress
 Als laatste kan je ook progressie toevoegen aan de databank. Deze moet echter altijd gekoppeld zijn aan een bestaande speler en game, anders zal de endpoint aangeven welke van de twee niet inorde is.
 
-![Aanmaken van progressie met een ongeldige player_id.](https://github.com/wobr53/apidev-project/assets/113974538/8051b3f4-719a-44ea-a137-c95c0f0fc86a)
+<img width="966" alt="Aanmaken van progressie met een ongeldige player_id." src="https://github.com/wobr53/apidev-project/assets/113974538/76941494-06a4-4b8e-a642-84330d114871">
 
-![Aanmaken van progressie met een ongeldige game_id.](https://github.com/wobr53/apidev-project/assets/113974538/5016afdd-e7e8-4873-af7e-1c460acf884f)
+<img width="966" alt="Aanmaken van progressie met een ongeldige game_id." src="https://github.com/wobr53/apidev-project/assets/113974538/1c103209-ea7c-44d7-8a3c-8f4a8afb2f51">
 
-![Aanmaken van progressie voor speler 1 in spel 1. Andere parameters zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/82015ee0-0047-4ef8-994f-7cdfabea6631)
+<img width="966" alt="Aanmaken van progressie voor speler 1 in spel 1. Andere parameters zijn niet verplicht." src="https://github.com/wobr53/apidev-project/assets/113974538/50ab5cae-c6a1-49fc-bf61-7d636c44b266">
 
 ### POST /token
 Zoals je kan zien in de eerste printscreen is er een authenticatiefunctie. Deze zorgt ervoor dat sommige acties in de interface enkel mogelijk zijn als je geauthenticeerd bent tegenover de API.
 
-![Authenticatie tegenover de API met de gegevens van speler 1.](https://github.com/wobr53/apidev-project/assets/113974538/6592c34b-8305-42e3-b303-fb549ba181e7)
+<img width="966" alt="Authenticatie tegenover de API met de gegevens van speler 1." src="https://github.com/wobr53/apidev-project/assets/113974538/0038c99b-fc16-4007-bd14-b3be64350e68">
 
 In de printscreen kan je zien dat speler 1 nu een sessietoken heeft gekregen. Hij is nu gemachtigd om versleutelde endpoints te gebruiken.
 
