@@ -94,8 +94,8 @@ Met dit request vragen we elke progressie-vermelding afzonderlijk op. Ook hier z
 ### GET players/{username}
 Dit request zal je de speler zijn/haar gegevens en statistieken laten zien op basis van de gebruikersnaam. Als de gebruikersnaam niet bestaat krijg je dit ook te weten.
 
-![Gegevens en statistieken van speler met gebruikersnaam "player3".](https://github.com/wobr53/apidev-project/assets/113974538/5cd80a5d-5194-4b85-baeb-066b015d3fca)
-![Ongeldige gebruikersnaam meegegeven.](https://github.com/wobr53/apidev-project/assets/113974538/67f26815-b9d7-4414-ad95-6808b2f2bb62)
+![Gegevens en statistieken van speler met gebruikersnaam 'player3'.](https://github.com/wobr53/apidev-project/assets/113974538/7756878e-6086-442a-bcf3-e26d04a19436 "Gegevens en statistieken van speler met gebruikersnaam 'player3'.")
+![Ongeldige gebruikersnaam meegegeven.](https://github.com/wobr53/apidev-project/assets/113974538/e2da9574-63b8-497a-971a-138a061791ea "Ongeldige gebruikersnaam meegegeven.")
 
 ### PUT /progress?player=&game=
 Als er progressie in de databank staat die achterhaald is, kan je deze updaten met dit request. 
