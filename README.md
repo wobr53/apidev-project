@@ -79,10 +79,10 @@ Met dit get request vragen we alle spelers met overeenkomstige progress uit de d
 ### GET /games
 Dit is hetzelfde als voor de spelers maar dan voor spelletjes.
 
-![Alle spelen 1/4](https://github.com/wobr53/apidev-project/assets/113974538/d09173d8-3ef3-4b59-be9a-643d5ce69be0)
-![Alle spelen 2/4](https://github.com/wobr53/apidev-project/assets/113974538/7f472eae-528a-473d-bfe9-a1a22328f618)
-![Alle spelen 3/4](https://github.com/wobr53/apidev-project/assets/113974538/1db1a3e6-2804-44e8-bcc6-05e8e57bcada)
-![Alle spelen 4/4](https://github.com/wobr53/apidev-project/assets/113974538/8dd77244-14b7-4690-a8ec-9f13ee8b66d9)
+![Alle spelen 1/4](https://github.com/wobr53/apidev-project/assets/113974538/17c255ae-d039-4af6-958f-82e6a809197f "Alle spelen 1/4")
+![Alle spelen 2/4](https://github.com/wobr53/apidev-project/assets/113974538/99872ef4-daf5-4102-9632-bd072d40b985 "Alle spelen 2/4")
+![Alle spelen 3/4](https://github.com/wobr53/apidev-project/assets/113974538/4faf5cc1-f44b-4548-8199-c431c5e37d09 "Alle spelen 3/4")
+![Alle spelen 4/4](https://github.com/wobr53/apidev-project/assets/113974538/eb57e565-e879-42ec-a388-db21df6f3487 "Alle spelen 4/4")
 
 ### GET /progress
 Met dit request vragen we elke progressie-vermelding afzonderlijk op. Ook hier zal je een lege lijst krijgen als er geen progressie-vermeldingen zijn.
