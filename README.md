@@ -121,11 +121,11 @@ Hier zijn ook weer drie vereisten van toepassing:
 + Het spel moet bestaan in de databank
 + Er moet al een progressie-vermelding voor die/dat speler en spel in de databank bestaan
 
-![Delete van progressie van onbestaande speler.](https://github.com/wobr53/apidev-project/assets/113974538/635d7b7f-8c06-4517-a895-a3bd08ba5f7b)
-![Delete van progressie van onbestaand spel.](https://github.com/wobr53/apidev-project/assets/113974538/2734bbf0-2419-4a15-a1ef-08060a6e6264)
-![Delete van progressie bij onbestaande progressie.](https://github.com/wobr53/apidev-project/assets/113974538/75388f0a-09e4-4f05-bd0e-4d21b15ebdc1)
-![Delete van progressie van speler 3 in spel 3.](https://github.com/wobr53/apidev-project/assets/113974538/ae1e829e-911a-4a20-be6b-cb29c6209328)
+![Delete van progressie van onbestaande speler.](https://github.com/wobr53/apidev-project/assets/113974538/bafdeef6-5e61-4271-a280-f4cb29a73bd8 "Delete van progressie van onbestaande speler.")
+![Delete van progressie van onbestaand spel.](https://github.com/wobr53/apidev-project/assets/113974538/20b9ba30-8caa-4001-8df7-6706bcc1d19f "Delete van progressie van onbestaand spel.")
+![Delete van progressie bij onbestaande progressie.](https://github.com/wobr53/apidev-project/assets/113974538/6c8b7800-d816-48b5-8fb8-b21fa85629fc "Delete van progressie bij onbestaande progressie.")
+![Delete van progressie van speler 3 in spel 3.](https://github.com/wobr53/apidev-project/assets/113974538/75969e5b-2ce4-40bf-8915-54fbdad3bdf2 "Delete van progressie van speler 3 in spel 3.")
 
 Nu zal je zien dat de progressie volledig is verwijderd uit de databank.
 
-![Verificatie verwijdering](https://github.com/wobr53/apidev-project/assets/113974538/d7b4bc51-78f2-48f4-9cf7-98b6ea198cfe)
+![Verificatie verwijdering.](https://github.com/wobr53/apidev-project/assets/113974538/ef5b69fe-d1e2-49da-b276-2a94c98750f8 "Verificatie verwijdering.")
