@@ -71,10 +71,10 @@ In de printscreen kan je zien dat speler 1 nu een sessietoken heeft gekregen. Hi
 ### GET /players
 Met dit get request vragen we alle spelers met overeenkomstige progress uit de databank op. Indien er geen spelers in de databank zitten, krijg je een lege lijst terug.
 
-![Alle spelers 1/4](https://github.com/wobr53/apidev-project/assets/113974538/ad118f57-9327-4212-a26d-4eadfe1b852d)
-![Alle spelers 2/4](https://github.com/wobr53/apidev-project/assets/113974538/eba865ce-6241-443f-a232-372d65bdb762)
-![Alle spelers 3/4](https://github.com/wobr53/apidev-project/assets/113974538/f0641aa7-8f80-44a7-9b74-709f526b7f95)
-![Alle spelers 4/4](https://github.com/wobr53/apidev-project/assets/113974538/69d430ef-8822-493e-9cfa-9bc2e003d925)
+![Alle spelers 1/4](https://github.com/wobr53/apidev-project/assets/113974538/4ea2a032-ec0e-4944-aef4-9fcfd74f85f8 "Alle spelers 1/4")
+![Alle spelers 2/4](https://github.com/wobr53/apidev-project/assets/113974538/bac47735-f11e-4d97-9b22-106597cc6f0d "Alle spelers 2/4")
+![Alle spelers 3/4](https://github.com/wobr53/apidev-project/assets/113974538/4d8f7a9d-c82b-4acd-b2fc-249040cb3f98 "Alle spelers 3/4")
+![Alle spelers 4/4](https://github.com/wobr53/apidev-project/assets/113974538/a63a5af0-c739-49d1-abad-f3391876aeb4 "Alle spelers 4/4")
 
 ### GET /games
 Dit is hetzelfde als voor de spelers maar dan voor spelletjes.
