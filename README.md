@@ -9,7 +9,7 @@ Als thema heb ik ervoor gekozen om mijn project te maken rond videospelletjes; m
 De basis van mijn API ligt aan de onderliggende Sqlite-databank. Deze bevat drie tabellen: Player, Game, en Progress. Hierin kunnen spelers en spelletjes afzonderlijk van elkaar bestaan, maar zal een progressie-vermelding steeds gelinkt zijn aan zowel een speler als een spel.
 Er is ook een beknopte webinterface voorzien om te kunnen interageren met de databank.
 
-![Webinterface voor het API basisproject. Gehost op Okteto.](https://github.com/wobr53/apidev-project/assets/113974538/dcdd59f1-e564-4124-b165-23c72b89e731)
+![Webinterface voor het API basisproject. Gehost op Okteto.](https://github.com/wobr53/apidev-project/assets/113974538/dcdd59f1-e564-4124-b165-23c72b89e731 "Webinterface voor het API basisproject. Gehost op Okteto.")
 
 In wat volgt zal ik over elke functie van de webinterface gaan.
 
@@ -19,7 +19,7 @@ We starten met /reset. Dit endpoint staat ons toe om alle data uit de databank t
 >[!NOTE]
 >In een API die naar productie gaat, zou je dit endpoint best beveiligen (net zoals alle andere, nu onbeveiligde, enpoints), maar voor demonstratie-redenen heb ik dit niet gedaan.
 
-![Delete all in werking.](https://github.com/wobr53/apidev-project/assets/113974538/5c2d856c-3006-4eea-ab5a-f41dcda476df)
+![Delete all in werking.](https://github.com/wobr53/apidev-project/assets/113974538/5c2d856c-3006-4eea-ab5a-f41dcda476df "Delete all in werking.")
 
 Na het opvragen van dit request zal alle data uit de databank verwijderd zijn. Het request laat zijn werking zien door achteraf een 'detail' terug te sturen.
 
