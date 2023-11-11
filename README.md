@@ -17,7 +17,7 @@ In wat volgt zal ik over elke functie van de webinterface gaan.
 We starten met /reset. Dit endpoint staat ons toe om alle data uit de databank te verwijderen.
 
 >[!NOTE]
->In een API die naar productie gaat, zou je dit endpoint best beveiligen (net zoals alle andere, nu onbeveiligde, enpoints), maar voor demonstratie-redenen heb ik dit niet gedaan.
+>In een API die naar productie gaat, zou je dit endpoint best beveiligen (net zoals alle andere, nu onbeveiligde, endpoints), maar voor demonstratie-redenen heb ik dit niet gedaan.
 
 ![Delete all in werking.](https://github.com/wobr53/apidev-project/assets/113974538/5c2d856c-3006-4eea-ab5a-f41dcda476df "Delete all in werking.")
 
