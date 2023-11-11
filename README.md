@@ -9,9 +9,11 @@ Als thema heb ik ervoor gekozen om mijn project te maken rond videospelletjes; m
 De basis van mijn API ligt aan de onderliggende Sqlite-databank. Deze bevat drie tabellen: Player, Game, en Progress. Hierin kunnen spelers en spelletjes afzonderlijk van elkaar bestaan, maar zal een progressie-vermelding steeds gelinkt zijn aan zowel een speler als een spel.
 Er is ook een beknopte webinterface voorzien om te kunnen interageren met de databank.
 
-![Webinterface voor het API basisproject. Gehost op Okteto.](https://github.com/wobr53/apidev-project/assets/113974538/0e64a8e7-892e-43a3-9974-17384d04025f)
-<img width="960" alt="Screenshot 2023-11-09 184042" src="https://github.com/wobr53/apidev-project/assets/113974538/d63487ea-6fe0-4b80-817c-6c6492361d52">
+>[!NOTE]
+>De links onder de afbeeldingen zijn de afbeeldingen van de private github repo. Als repo publiek staat zullen de bovenste links de afbeeldingen weergeven en de onderste links niet werken. Als de repo privé staat zal dit omgekeerd zijn.
 
+<img width="960" alt="Webinterface voor het API basisproject. Gehost op Okteto." src="https://github.com/wobr53/apidev-project/assets/113974538/d63487ea-6fe0-4b80-817c-6c6492361d52">
+![Webinterface voor het API basisproject. Gehost op Okteto.](https://github.com/wobr53/apidev-project/assets/113974538/0e64a8e7-892e-43a3-9974-17384d04025f)
 
 In wat volgt zal ik over elke functie van de webinterface gaan.
 
@@ -21,6 +23,7 @@ We starten met /reset. Dit endpoint staat ons toe om alle data uit de databank t
 >[!NOTE]
 >In een API die naar productie gaat, zou je dit endpoint best beveiligen (net zoals alle andere, nu onbeveiligde, enpoints), maar voor demonstratie-redenen heb ik dit niet gedaan.
 
+<img width="966" alt="Delete all in werking." src="https://github.com/wobr53/apidev-project/assets/113974538/d1c6eddc-a982-4d61-82f2-84477001b5b4">
 ![Delete all in werking.](https://github.com/wobr53/apidev-project/assets/113974538/486790b6-e3ce-4690-88a0-0f892e4c1b9c)
 
 Na het opvragen van dit request zal alle data uit de databank verwijderd zijn. Het request laat zijn werking zien door achteraf een 'detail' terug te sturen.
@@ -28,25 +31,32 @@ Na het opvragen van dit request zal alle data uit de databank verwijderd zijn. H
 ### POST /players
 Deze request zal een nieuwe speler aanmaken mits je de juiste request body meegeeft.
 
+<img width="966" alt="Aanmaken van een speler met gebruikersnaam "player1", email "player1@test.com", geboortedatum "12 december 2003", en wachtwoord "pass1". Land wordt niet meegegeven want dit is niet verplicht." src="https://github.com/wobr53/apidev-project/assets/113974538/42494fd5-933b-42a9-9562-7c767e0ebe6f">
 ![Aanmaken van een speler met gebruikersnaam "player1", email "player1@test.com", geboortedatum "12 december 2003", en wachtwoord "pass1". Land wordt niet meegegeven want dit is niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/793f5c76-def1-45d2-a042-1d0c2ee437d5)
 
 Het is niet mogelijk om een speler aan te maken met dezelf gebruikersnaam of email. Als dit toch gebeurt, zal het programma een foutmelding teruggeven dat specifieerd wat er mis is.
 
+<img width="966" alt="Aanmaken van een speler met een al bestaand email." src="https://github.com/wobr53/apidev-project/assets/113974538/ffd17404-a74c-4ffe-ae04-77e823fe7579">
 ![Aanmaken van een speler met een al bestaand email.](https://github.com/wobr53/apidev-project/assets/113974538/b556597e-2053-4b00-b748-ebedf305f390)
 
+<img width="966" alt="Aanmaken van een speler met een al bestaande gebruikersnaam." src="https://github.com/wobr53/apidev-project/assets/113974538/5d68d09b-8e30-467c-87f1-ec528aee1461">
 ![Aanmaken van een speler met een al bestaande gebruikersnaam.](https://github.com/wobr53/apidev-project/assets/113974538/6f2da4d6-862f-4ba0-8530-2f36224b0098)
 
 ### POST /games
 Naast spelers kan je ook spelletjes toevoegen aan de databank. Dit kan met behulp van het post /games endpoint.
 
+<img width="966" alt="Aanmaken van een spel titel "Game1", publicatiedatum "8 april 2023", en genre "RPG". Genre en ontwikkelaar zijn niet verplicht." src="https://github.com/wobr53/apidev-project/assets/113974538/9f1b9c3c-09bd-42b5-8fbb-181551eafe48">
 ![Aanmaken van een spel titel "Game1", publicatiedatum "8 april 2023", en genre "RPG". Genre en ontwikkelaar zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/46b27e38-9ecc-46dc-9e68-1c76b8f9922a)
 
 Bij games geldt er ook een restrictie op duplicaten: spelen met de dezelfde titel en publicatiedatum zullen niet worden aangenomen. Een titel kan wel twee keer voorkomen in de databank, maar dan met een verschillende publicatiedatum en vice versa.
 
+<img width="966" alt="Aanmaken van spel met bestaande titel op overeenkomstige publicatiedatum." src="https://github.com/wobr53/apidev-project/assets/113974538/1b86732c-f9a7-4588-ac05-daef1a06f98d">
 ![Aanmaken van spel met bestaande titel op overeenkomstige publicatiedatum.](https://github.com/wobr53/apidev-project/assets/113974538/6e7e2014-1584-4405-aa5c-1cce6f593d49)
 
+<img width="966" alt="Aanmaken van spel met onbestaande titel op een al bestaande publicatiedatum." src="https://github.com/wobr53/apidev-project/assets/113974538/eec9a3da-e544-4bcc-bf50-aa638126c560">
 ![Aanmaken van spel met onbestaande titel op een al bestaande publicatiedatum.](https://github.com/wobr53/apidev-project/assets/113974538/604d34d0-a294-4c83-92e7-88bf4b180185)
 
+<img width="966" alt="Aanmaken van spel met bestaande titel op een niet overeenkomende publicatiedatum." src="https://github.com/wobr53/apidev-project/assets/113974538/1c4fda29-5f57-402e-9cdc-e5706c4f925f">
 ![Aanmaken van spel met bestaande titel op een niet overeenkomende publicatiedatum.](https://github.com/wobr53/apidev-project/assets/113974538/886a733f-9295-4e19-acd9-1faa34b743aa)
 
 ### POST /progress
