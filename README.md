@@ -9,7 +9,7 @@ Als thema heb ik ervoor gekozen om mijn project te maken rond videospelletjes; m
 De basis van mijn API ligt aan de onderliggende Sqlite-databank. Deze bevat drie tabellen: Player, Game, en Progress. Hierin kunnen spelers en spelletjes afzonderlijk van elkaar bestaan, maar zal een progressie-vermelding steeds gelinkt zijn aan zowel een speler als een spel.
 Er is ook een beknopte webinterface voorzien om te kunnen interageren met de databank.
 
-<img width="960" alt="Webinterface voor het API basisproject. Gehost op Okteto." src="https://github.com/wobr53/apidev-project/assets/113974538/d63487ea-6fe0-4b80-817c-6c6492361d52">
+![Webinterface voor het API basisproject. Gehost op Okteto.](https://github.com/wobr53/apidev-project/assets/113974538/dcdd59f1-e564-4124-b165-23c72b89e731)
 
 In wat volgt zal ik over elke functie van de webinterface gaan.
 
@@ -26,7 +26,7 @@ Na het opvragen van dit request zal alle data uit de databank verwijderd zijn. H
 ### POST /players
 Deze request zal een nieuwe speler aanmaken mits je de juiste request body meegeeft.
 
-<img width="966" alt="Aanmaken van een speler met gebruikersnaam 'player1', email 'player1@test.com', geboortedatum '12 december 2003', en wachtwoord 'pass1'. Land wordt niet meegegeven want dit is niet verplicht." src="https://github.com/wobr53/apidev-project/assets/113974538/42494fd5-933b-42a9-9562-7c767e0ebe6f">
+![Aanmaken van een speler met gebruikersnaam 'player1', email 'player1@test.com', geboortedatum '12 december 2003', en wachtwoord 'pass1'. Land wordt niet meegegeven want dit is niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/59ec5f26-c91f-4a0d-ad31-d5b63283fbd3)
 
 Het is niet mogelijk om een speler aan te maken met dezelf gebruikersnaam of email. Als dit toch gebeurt, zal het programma een foutmelding teruggeven dat specifieerd wat er mis is.
 
@@ -37,7 +37,7 @@ Het is niet mogelijk om een speler aan te maken met dezelf gebruikersnaam of ema
 ### POST /games
 Naast spelers kan je ook spelletjes toevoegen aan de databank. Dit kan met behulp van het post /games endpoint.
 
-<img width="966" alt="Aanmaken van een spel titel 'Game1', publicatiedatum '8 april 2023', en genre 'RPG'. Genre en ontwikkelaar zijn niet verplicht." src="https://github.com/wobr53/apidev-project/assets/113974538/9f1b9c3c-09bd-42b5-8fbb-181551eafe48">
+![Aanmaken van een spel titel 'Game1', publicatiedatum '8 april 2023', en genre 'RPG'. Genre en ontwikkelaar zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/87042d6f-bc64-4d46-ad1a-4a0428920524)
 
 Bij games geldt er ook een restrictie op duplicaten: spelen met de dezelfde titel en publicatiedatum zullen niet worden aangenomen. Een titel kan wel twee keer voorkomen in de databank, maar dan met een verschillende publicatiedatum en vice versa.
 
