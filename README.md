@@ -45,12 +45,12 @@ Bij games geldt er ook een restrictie op duplicaten: spelen met de dezelfde tite
 
 <img width="966" alt="Aanmaken van spel met onbestaande titel op een al bestaande publicatiedatum." src="https://github.com/wobr53/apidev-project/assets/113974538/eec9a3da-e544-4bcc-bf50-aa638126c560">
 
-<img width="966" alt="Aanmaken van spel met bestaande titel op een niet overeenkomende publicatiedatum." src="https://github.com/wobr53/apidev-project/assets/113974538/1c4fda29-5f57-402e-9cdc-e5706c4f925f">
-
 ### POST /progress
 Als laatste kan je ook progressie toevoegen aan de databank. Deze moet echter altijd gekoppeld zijn aan een bestaande speler en game, anders zal de endpoint aangeven welke van de twee niet inorde is.
 
-<img width="966" alt="Aanmaken van progressie met een ongeldige player_id." src="https://github.com/wobr53/apidev-project/assets/113974538/76941494-06a4-4b8e-a642-84330d114871">
+<img width="966" alt="Aanmaken van progressie met een ongeldige player_id." src="https://github.com/wobr53/apidev-project/assets/113974538/fc05bad5-4763-47e4-94a9-d82678070ad7">
+
+![image](https://github.com/wobr53/apidev-project/assets/113974538/f87d5fd7-85e8-4865-bc29-65b2d98c69fe)
 
 <img width="966" alt="Aanmaken van progressie met een ongeldige game_id." src="https://github.com/wobr53/apidev-project/assets/113974538/1c103209-ea7c-44d7-8a3c-8f4a8afb2f51">
 
