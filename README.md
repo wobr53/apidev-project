@@ -37,29 +37,27 @@ Het is niet mogelijk om een speler aan te maken met dezelf gebruikersnaam of ema
 ### POST /games
 Naast spelers kan je ook spelletjes toevoegen aan de databank. Dit kan met behulp van het post /games endpoint.
 
-![Aanmaken van een spel titel 'Game1', publicatiedatum '8 april 2023', en genre 'RPG'. Genre en ontwikkelaar zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/87042d6f-bc64-4d46-ad1a-4a0428920524)
+![Aanmaken van een spel titel 'Game1', publicatiedatum '8 april 2023', en genre 'RPG'. Genre en ontwikkelaar zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/f30f3ec1-29d5-4904-872e-750cf917e33e "Aanmaken van een spel titel 'Game1', publicatiedatum '8 april 2023', en genre 'RPG'. Genre en ontwikkelaar zijn niet verplicht.")
 
 Bij games geldt er ook een restrictie op duplicaten: spelen met de dezelfde titel en publicatiedatum zullen niet worden aangenomen. Een titel kan wel twee keer voorkomen in de databank, maar dan met een verschillende publicatiedatum en vice versa.
 
-<img width="966" alt="Aanmaken van spel met bestaande titel op overeenkomstige publicatiedatum." src="https://github.com/wobr53/apidev-project/assets/113974538/1b86732c-f9a7-4588-ac05-daef1a06f98d">
+![Aanmaken van spel met bestaande titel op overeenkomstige publicatiedatum.](https://github.com/wobr53/apidev-project/assets/113974538/80380d03-ef8d-46ac-8d1c-911fb3f603d9 "Aanmaken van spel met bestaande titel op overeenkomstige publicatiedatum.")
 
-<img width="966" alt="Aanmaken van spel met onbestaande titel op een al bestaande publicatiedatum." src="https://github.com/wobr53/apidev-project/assets/113974538/eec9a3da-e544-4bcc-bf50-aa638126c560">
+![Aanmaken van spel met onbestaande titel op een al bestaande publicatiedatum.](https://github.com/wobr53/apidev-project/assets/113974538/e07d140e-35a5-43b7-9c14-31d1eb7a6aa2 "Aanmaken van spel met onbestaande titel op een al bestaande publicatiedatum.")
 
 ### POST /progress
 Als laatste kan je ook progressie toevoegen aan de databank. Deze moet echter altijd gekoppeld zijn aan een bestaande speler en game, anders zal de endpoint aangeven welke van de twee niet inorde is.
 
-<img width="966" alt="Aanmaken van progressie met een ongeldige player_id." src="https://github.com/wobr53/apidev-project/assets/113974538/fc05bad5-4763-47e4-94a9-d82678070ad7">
+![Aanmaken van progressie met een ongeldige player_id.](https://github.com/wobr53/apidev-project/assets/113974538/f8509f83-1581-4f08-bd31-555a399cf363 "Aanmaken van progressie met een ongeldige player_id.")
 
-![image](https://github.com/wobr53/apidev-project/assets/113974538/f87d5fd7-85e8-4865-bc29-65b2d98c69fe)
+![Aanmaken van progressie met een ongeldige game_id.](https://github.com/wobr53/apidev-project/assets/113974538/16916a11-1d29-436a-ba14-60be417532e1 "Aanmaken van progressie met een ongeldige game_id.")
 
-<img width="966" alt="Aanmaken van progressie met een ongeldige game_id." src="https://github.com/wobr53/apidev-project/assets/113974538/1c103209-ea7c-44d7-8a3c-8f4a8afb2f51">
-
-<img width="966" alt="Aanmaken van progressie voor speler 1 in spel 1. Andere parameters zijn niet verplicht." src="https://github.com/wobr53/apidev-project/assets/113974538/50ab5cae-c6a1-49fc-bf61-7d636c44b266">
+![Aanmaken van progressie voor speler 1 in spel 1. Andere parameters zijn niet verplicht.](https://github.com/wobr53/apidev-project/assets/113974538/d3b362b7-bbe8-433d-9a1d-a2592e66d48c "Aanmaken van progressie voor speler 1 in spel 1. Andere parameters zijn niet verplicht.")
 
 ### POST /token
 Zoals je kan zien in de eerste printscreen is er een authenticatiefunctie. Deze zorgt ervoor dat sommige acties in de interface enkel mogelijk zijn als je geauthenticeerd bent tegenover de API.
 
-<img width="966" alt="Authenticatie tegenover de API met de gegevens van speler 1." src="https://github.com/wobr53/apidev-project/assets/113974538/0038c99b-fc16-4007-bd14-b3be64350e68">
+![Authenticatie tegenover de API met de gegevens van speler 1.](https://github.com/wobr53/apidev-project/assets/113974538/b7378185-0f03-4a82-8a6e-502ba3790a69 "Authenticatie tegenover de API met de gegevens van speler 1.")
 
 In de printscreen kan je zien dat speler 1 nu een sessietoken heeft gekregen. Hij is nu gemachtigd om versleutelde endpoints te gebruiken.
 
@@ -68,7 +66,7 @@ In de printscreen kan je zien dat speler 1 nu een sessietoken heeft gekregen. Hi
 
 >[!IMPORTANT]
 >Na het vergaren van de accesstoken moet je hem meegeven in het authorisation veld van het request.
->![Access token in authorization veld.](https://github.com/wobr53/apidev-project/assets/113974538/30d9e319-9130-402f-98fc-a498efc22b54)
+>![Access token in authorization veld.](https://github.com/wobr53/apidev-project/assets/113974538/3d8b7c0a-78c7-48cb-baf1-cc6c930649b2 "Access token in authorization veld.")
 
 ### GET /players
 Met dit get request vragen we alle spelers met overeenkomstige progress uit de databank op. Indien er geen spelers in de databank zitten, krijg je een lege lijst terug.
