@@ -10,6 +10,8 @@ De basis van mijn API ligt aan de onderliggende Sqlite-databank. Deze bevat drie
 Er is ook een beknopte webinterface voorzien om te kunnen interageren met de databank.
 
 ![Webinterface voor het API basisproject. Gehost op Okteto.](https://github.com/wobr53/apidev-project/assets/113974538/0e64a8e7-892e-43a3-9974-17384d04025f)
+<img width="960" alt="Screenshot 2023-11-09 184042" src="https://github.com/wobr53/apidev-project/assets/113974538/d63487ea-6fe0-4b80-817c-6c6492361d52">
+
 
 In wat volgt zal ik over elke functie van de webinterface gaan.
 
