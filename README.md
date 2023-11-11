@@ -87,9 +87,9 @@ Dit is hetzelfde als voor de spelers maar dan voor spelletjes.
 ### GET /progress
 Met dit request vragen we elke progressie-vermelding afzonderlijk op. Ook hier zal je een lege lijst krijgen als er geen progressie-vermeldingen zijn.
 
-![Alle progressie 1/3](https://github.com/wobr53/apidev-project/assets/113974538/501a2703-8d71-409a-b430-da5ff523a38d)
-![Alle progressie 2/3](https://github.com/wobr53/apidev-project/assets/113974538/3fe2cee9-9fb8-44b1-83f4-92fc1704741a)
-![Alle prgressie 3/3](https://github.com/wobr53/apidev-project/assets/113974538/6d91a839-4327-4079-92d9-045d66be7e60)
+![Alle progressie 1/3](https://github.com/wobr53/apidev-project/assets/113974538/95d9b01c-9b98-47c4-b26e-21afd2050285 "Alle progressie 1/3")
+![Alle progressie 2/3](https://github.com/wobr53/apidev-project/assets/113974538/ec67054a-a758-428f-8075-c0f2c345c912 "Alle progressie 2/3")
+![Alle progressie 3/3](https://github.com/wobr53/apidev-project/assets/113974538/029251fb-7267-454a-9658-4a9f36ba24e3 "Alle prgressie 3/3")
 
 ### GET players/{username}
 Dit request zal je de speler zijn/haar gegevens en statistieken laten zien op basis van de gebruikersnaam. Als de gebruikersnaam niet bestaat krijg je dit ook te weten.
