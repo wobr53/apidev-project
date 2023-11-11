@@ -19,7 +19,7 @@ We starten met /reset. Dit endpoint staat ons toe om alle data uit de databank t
 >[!NOTE]
 >In een API die naar productie gaat, zou je dit endpoint best beveiligen (net zoals alle andere, nu onbeveiligde, enpoints), maar voor demonstratie-redenen heb ik dit niet gedaan.
 
-<img width="966" alt="Delete all in werking." src="https://github.com/wobr53/apidev-project/assets/113974538/d1c6eddc-a982-4d61-82f2-84477001b5b4">
+![Delete all in werking.](https://github.com/wobr53/apidev-project/assets/113974538/5c2d856c-3006-4eea-ab5a-f41dcda476df)
 
 Na het opvragen van dit request zal alle data uit de databank verwijderd zijn. Het request laat zijn werking zien door achteraf een 'detail' terug te sturen.
 
